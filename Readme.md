@@ -7,7 +7,7 @@ Project that demos how AsyncTask can be moved to Fragment so that the AsyncTask 
 * The AsyncTask does not have a corresponding UI
 
 ## Steps
-1. Create your AsyncTaskFragment class named something like AsyncTaskFragment extending Fragment, the template for which is below:
+    1. Create your AsyncTaskFragment class named something like AsyncTaskFragment extending Fragment, the template for which is below:
 ```Java
 public class AsyncTaskFragment extends Fragment {
 
@@ -54,7 +54,7 @@ public class AsyncTaskFragment extends Fragment {
 }
 ```
 
-2. Define your AsyncTask class that extends AsyncTask<Params, Progress, Result> something like below:
+    2. Define your AsyncTask class that extends AsyncTask<Params, Progress, Result> something like below:
 ```Java
 class MyAsyncTask extends AsyncTask<Params, Progress, Result> {
         @Override
@@ -73,14 +73,14 @@ class MyAsyncTask extends AsyncTask<Params, Progress, Result> {
 }
 ``` 
 
-3. Inside that class define an interface something like below:
+    3. Inside that class define an interface something like below:
 ```Java
     public interface AsyncTaskInitiator {
         void handleTaskUpdate(String message);
     }
 ```
 
-4. The Activity class that starts the AsyncTask should implement the interface defined in the previous step. See sample code below:
+    4. The Activity class that starts the AsyncTask should implement the interface defined in the previous step. See sample code below:
 ```Java
 public class MainActivity extends Activity implements AsyncTaskInitiator {
     @Override
